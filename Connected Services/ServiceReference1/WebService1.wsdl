@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="InsertAgentii">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nume" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertAgentiiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateAgentii">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="nume" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateAgentiiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteAgentii">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_agentie" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteAgentiiResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateOferta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_agentie" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_spatiu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vanzare" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pret" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="moneda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateOfertaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertOferta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_agentie" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_spatiu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="vanzare" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="pret" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="moneda" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertOfertaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteOferta">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_spatiu" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_agentie" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteOfertaResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertSpatiu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="adresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zona" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="suprafata" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_tip" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertSpatiuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateSpatiu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_spatiu" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="adresa" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="zona" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="suprafata" type="s:int" />
+            <s:element minOccurs="1" maxOccurs="1" name="id_tip" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateSpatiuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteSpatiu">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_spatiu" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteSpatiuResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="UpdateTip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_tip" type="s:int" />
+            <s:element minOccurs="0" maxOccurs="1" name="denumire" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caracteristici" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateTipResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="InsertTip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="denumire" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="caracteristici" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertTipResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteTip">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id_tip" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteTipResponse">
+        <s:complexType />
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="InsertAgentiiSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertAgentii" />
+  </wsdl:message>
+  <wsdl:message name="InsertAgentiiSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertAgentiiResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgentiiSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateAgentii" />
+  </wsdl:message>
+  <wsdl:message name="UpdateAgentiiSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateAgentiiResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAgentiiSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteAgentii" />
+  </wsdl:message>
+  <wsdl:message name="DeleteAgentiiSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteAgentiiResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOfertaSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateOferta" />
+  </wsdl:message>
+  <wsdl:message name="UpdateOfertaSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertOfertaSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertOferta" />
+  </wsdl:message>
+  <wsdl:message name="InsertOfertaSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOfertaSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteOferta" />
+  </wsdl:message>
+  <wsdl:message name="DeleteOfertaSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteOfertaResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertSpatiuSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertSpatiu" />
+  </wsdl:message>
+  <wsdl:message name="InsertSpatiuSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertSpatiuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSpatiuSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateSpatiu" />
+  </wsdl:message>
+  <wsdl:message name="UpdateSpatiuSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateSpatiuResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSpatiuSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteSpatiu" />
+  </wsdl:message>
+  <wsdl:message name="DeleteSpatiuSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteSpatiuResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTipSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateTip" />
+  </wsdl:message>
+  <wsdl:message name="UpdateTipSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertTipSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertTip" />
+  </wsdl:message>
+  <wsdl:message name="InsertTipSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertTipResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTipSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteTip" />
+  </wsdl:message>
+  <wsdl:message name="DeleteTipSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteTipResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="InsertAgentii">
+      <wsdl:input message="tns:InsertAgentiiSoapIn" />
+      <wsdl:output message="tns:InsertAgentiiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgentii">
+      <wsdl:input message="tns:UpdateAgentiiSoapIn" />
+      <wsdl:output message="tns:UpdateAgentiiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgentii">
+      <wsdl:input message="tns:DeleteAgentiiSoapIn" />
+      <wsdl:output message="tns:DeleteAgentiiSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOferta">
+      <wsdl:input message="tns:UpdateOfertaSoapIn" />
+      <wsdl:output message="tns:UpdateOfertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertOferta">
+      <wsdl:input message="tns:InsertOfertaSoapIn" />
+      <wsdl:output message="tns:InsertOfertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOferta">
+      <wsdl:input message="tns:DeleteOfertaSoapIn" />
+      <wsdl:output message="tns:DeleteOfertaSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpatiu">
+      <wsdl:input message="tns:InsertSpatiuSoapIn" />
+      <wsdl:output message="tns:InsertSpatiuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpatiu">
+      <wsdl:input message="tns:UpdateSpatiuSoapIn" />
+      <wsdl:output message="tns:UpdateSpatiuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpatiu">
+      <wsdl:input message="tns:DeleteSpatiuSoapIn" />
+      <wsdl:output message="tns:DeleteSpatiuSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTip">
+      <wsdl:input message="tns:UpdateTipSoapIn" />
+      <wsdl:output message="tns:UpdateTipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertTip">
+      <wsdl:input message="tns:InsertTipSoapIn" />
+      <wsdl:output message="tns:InsertTipSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTip">
+      <wsdl:input message="tns:DeleteTipSoapIn" />
+      <wsdl:output message="tns:DeleteTipSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAgentii">
+      <soap:operation soapAction="http://tempuri.org/InsertAgentii" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgentii">
+      <soap:operation soapAction="http://tempuri.org/UpdateAgentii" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgentii">
+      <soap:operation soapAction="http://tempuri.org/DeleteAgentii" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOferta">
+      <soap:operation soapAction="http://tempuri.org/UpdateOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOferta">
+      <soap:operation soapAction="http://tempuri.org/InsertOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOferta">
+      <soap:operation soapAction="http://tempuri.org/DeleteOferta" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpatiu">
+      <soap:operation soapAction="http://tempuri.org/InsertSpatiu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpatiu">
+      <soap:operation soapAction="http://tempuri.org/UpdateSpatiu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpatiu">
+      <soap:operation soapAction="http://tempuri.org/DeleteSpatiu" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTip">
+      <soap:operation soapAction="http://tempuri.org/UpdateTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTip">
+      <soap:operation soapAction="http://tempuri.org/InsertTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTip">
+      <soap:operation soapAction="http://tempuri.org/DeleteTip" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="InsertAgentii">
+      <soap12:operation soapAction="http://tempuri.org/InsertAgentii" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateAgentii">
+      <soap12:operation soapAction="http://tempuri.org/UpdateAgentii" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteAgentii">
+      <soap12:operation soapAction="http://tempuri.org/DeleteAgentii" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateOferta">
+      <soap12:operation soapAction="http://tempuri.org/UpdateOferta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertOferta">
+      <soap12:operation soapAction="http://tempuri.org/InsertOferta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteOferta">
+      <soap12:operation soapAction="http://tempuri.org/DeleteOferta" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertSpatiu">
+      <soap12:operation soapAction="http://tempuri.org/InsertSpatiu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateSpatiu">
+      <soap12:operation soapAction="http://tempuri.org/UpdateSpatiu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteSpatiu">
+      <soap12:operation soapAction="http://tempuri.org/DeleteSpatiu" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateTip">
+      <soap12:operation soapAction="http://tempuri.org/UpdateTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertTip">
+      <soap12:operation soapAction="http://tempuri.org/InsertTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteTip">
+      <soap12:operation soapAction="http://tempuri.org/DeleteTip" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="https://localhost:44385/WebService1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="https://localhost:44385/WebService1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
